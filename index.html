@@ -136,23 +136,42 @@
             <option value="Lavage Super (149,99$)">Lavage Super (149,99$)</option>
             <option value="Shampoing des sièges (49,99$)">Shampoing des sièges (49,99$)</option>
         </select><br>
-        <input type="date" name="date" required><br>
-        <button type="submit">Réserver</button>
+       <section>
+    <h2>Prendre rendez-vous</h2>
+    <form action="https://formspree.io/f/mqkvyvky" method="POST">
+      <input type="text" name="nom" placeholder="Nom complet" required>
+      <input type="email" name="email" placeholder="Adresse email" required>
+      <input type="tel" name="telephone" placeholder="Numéro de téléphone" required>
+      <input type="text" name="adresse" placeholder="Adresse à domicile" required>
+      <select name="type_lavage" required>
+        <option value="Lavage extérieur">Lavage extérieur</option>
+        <option value="Lavage intérieur">Lavage intérieur</option>
+        <option value="Lavage régulier">Lavage régulier</option>
+        <option value="Lavage super">Lavage super</option>
+        <option value="Shampoing des sièges">Shampoing des sièges</option>
+      </select>
+      <input type="date" name="date_rdv" required>
+      <input type="time" name="heure_rdv" min="08:00" max="18:00" required>
+      <button type="submit">Réserver</button>
     </form>
-</section>
+  </section>
 
-<section class="contact-section">
+  <section>
     <h2>Contactez-nous</h2>
-    <p class="contact-info">Email : info.lavemoichezmo@gmail.com</p>
-    <p class="contact-info">Numéro de téléphone : 8736623813</p>
-    <p><a href="sms:8736623813" class="contact-info">Envoyer un Texto</a></p>
-    <p><a href="https://www.instagram.com/lavemoichezmoi/" class="contact-info" target="_blank">Instagram</a></p>
-</section>
+    <p>Email : <a href="mailto:info.lavemoichezmo@gmail.com">info.lavemoichezmo@gmail.com</a></p>
+    <p>Téléphone : <a href="tel:+18736623813">8736623813</a></p>
+    <a href="sms:+18736623813"><button>Envoyer un texto</button></a>
+    <br><br>
+    <a href="https://www.instagram.com/" target="_blank">Suivez-nous sur Instagram</a>
+  </section>
 
-<section class="map-section">
-    <h2>Nos Services en Estrie</h2>
-    <iframe src="https://www.google.com/maps/place/Estrie,+QC,+Canada/@45.4729643,-73.0811291,8z/data=!3m1!4b1!4m6!3m5!1s0x4cb7d1023a3e2af9:0x6fe5ec42a11e3e2d!8m2!3d45.5039479!4d-71.7524461!16zL20vMDFmZ243?hl=fr&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D"="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</section>
+  <section>
+    <h2>Notre localisation</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m3!1m2!1s0x4cb7be39cd7030ad%3A0xf2378b6ac2180e06!2sEstrie%2C%20QC!5e0!3m2!1sfr!2sca!4v1714772054791" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 Lave Moi Chez Moi — Tous droits réservés</p>
+  </footer>
 </body>
 </html>

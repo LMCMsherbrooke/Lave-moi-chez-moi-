@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lave Moi Chez Moi</title>
+    <style>
+        body {
+            direction: ltr;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #0056b3;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        a {
+            color: #00C4FF;
+            text-decoration: none;
+        }
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .whatsapp-button:hover {
+            background-color: #1ebc59;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            margin-top: 15px;
+        }
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 220px;
+            padding: 15px;
+            text-align: center;
+        }
+        .card h3 {
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+        .card p {
+            font-size: 18px;
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        form input, form select, form button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        form button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Lave Moi Chez Moi</h1>
+    <p>Nous offrons un service de lavage automobile à domicile — Sherbrooke et ses environs</p>
+</header>
+
+<section>
+    <h2>Nos services</h2>
+
+    <div class="pricing-container">
+        <div class="card">
+            <h3>Lavage intérieur</h3>
+            <p>49,99 $</p>
+        </div>
+        <div class="card">
+            <h3>Lavage extérieur</h3>
+            <p>39,99 $</p>
+        </div>
+        <div class="card">
+            <h3>Lavage régulier<br>(intérieur + extérieur)</h3>
+            <p>74,99 $</p>
+        </div>
+        <div class="card">
+            <h3>Lavage super</h3>
+            <p>149,99 $</p>
+        </div>
+    </div>
+
+</section>
+
+<section>
+    <h2>Prendre un rendez-vous</h2>
+    <form action="https://formsubmit.co/info.lavemoichezmoi@gmail.com" method="POST">
+        
+        <label>Nom complet :</label><br>
+        <input type="text" name="Nom complet" required><br>
+
+        <label>Téléphone :</label><br>
+        <input type="tel" name="Téléphone" required><br>
+
+        <label>Type de lavage :</label><br>
+        <select name="Type de lavage" required>
+            <option value="Lavage intérieur">Lavage intérieur - 49,99 $</option>
+            <option value="Lavage extérieur">Lavage extérieur - 39,99 $</option>
+            <option value="Lavage régulier">Lavage régulier (int. + ext.) - 74,99 $</option>
+            <option value="Lavage super">Lavage super - 149,99 $</option>
+        </select><br>
+
+        <label>Date souhaitée :</label><br>
+        <input type="date" name="Date souhaitée" required><br>
+
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+<section>
+    <h2>Contactez-nous</h2>
+    <p>📞 Téléphone : <a href="tel:+18196663133">(819) 666-3133</a></p>
+    <p>📧 Courriel : <a href="mailto:info.lavemoichezmoi@gmail.com">info.lavemoichezmoi@gmail.com</a></p>
+
+    <a class="whatsapp-button" href="https://wa.me/18196663133" target="_blank">
+        📲 Envoyez-nous un message sur WhatsApp
+    </a>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27720.983674594694!2d-71.9311154!3d45.4041635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb7caa759fa1ad5%3A0x1ed86f5a18834e5e!2sSherbrooke%2C%20QC!5e0!3m2!1sfr!2sca!4v1714734200000!5m2!1sfr!2sca" allowfullscreen="" loading="lazy"></iframe>
+
+</section>
+
+<footer>
+    &copy; 2025 Lave Moi Chez Moi. Tous droits réservés.
+</footer>
+
+</body>
+</html>

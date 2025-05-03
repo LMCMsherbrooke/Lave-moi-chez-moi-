@@ -1,157 +1,159 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lave Moi Chez Moi</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-header {
-    background-color: #007BFF;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 2em;
-}
-section {
-    padding: 20px;
-    text-align: center;
-}
-h2 {
-    color: #007BFF;
-}
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
-}
-.service {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    background: #f9f9f9;
-}
-form {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
-}
-form input, form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-form button {
-    background-color: #007BFF;
-    color: white;
-    padding: 15px;
-    border: none;
-    width: 100%;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-.contact {
-    margin: 30px 0;
-}
-.map {
-    margin-top: 20px;
-}
-</style>
-<script>
-function updatePrice() {
-    const type = document.getElementById('type').value;
-    const priceDisplay = document.getElementById('price-display');
-    const prices = {
-        "Lavage extérieur": "39,99$",
-        "Lavage intérieur": "49,99$ (+10$ SUV/VAN)",
-        "Lavage régulier": "74,99$ (+25$ VAN)",
-        "Lavage super": "149,99$ (+25$ VAN)",
-        "Shampoing des sièges": "49,99$ (+10$ VAN)"
-    };
-    priceDisplay.textContent = "Prix: " + (prices[type] || "");
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAVE MOI CHEZ MOI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        .service-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .service {
+            width: 22%;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .service h3 {
+            color: #0056b3;
+        }
+        .service p {
+            font-size: 16px;
+        }
+        .form-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+        .contact-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .contact-info {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .social-links a {
+            margin: 10px;
+            font-size: 20px;
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .map-section {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-<header>LAVE MOI CHEZ MOI</header>
+
+<header>
+    <h1>LAVE MOI CHEZ MOI</h1>
+    <p>Service de lavage auto à domicile en Estrie</p>
+</header>
+
 <section>
-    <h2>Service de lavage auto à domicile en Estrie</h2>
-    <p style="color:#007BFF; font-weight:bold">Nous offrons les prix les moins chers dans l’Estrie</p>
-    <p>Nous offrons des services de lavage auto à domicile dans la région de l'Estrie. Réservez dès maintenant !</p>
+    <p style="text-align:center; color:#0056b3;">Nous offrons les prix les moins chers dans l’Estrie</p>
+    <p style="text-align:center;">Nous offrons des services de lavage auto à domicile dans la région de l'Estrie. Réservez dès maintenant !</p>
 </section>
-<section class="services">
-<div class="service">
-    <h3>Lavage extérieur (39,99$)</h3>
-    <ul>
-        <li>Nettoyage complet de la carrosserie</li>
-        <li>Lavage des jantes et traitement de roues</li>
-        <li>Nettoyage des vitres extérieur</li>
-        <li>Séchage manuel</li>
-        <li>Application de cirage</li>
-    </ul>
-</div>
-<div class="service">
-    <h3>Lavage intérieur (49,99$) +10$ SUV/VAN</h3>
-    <ul>
-        <li>Aspirateur complet (siège, tapis, coffre)</li>
-        <li>Nettoyage des surfaces plastiques</li>
-        <li>Dépoussiérage minutieux</li>
-        <li>Nettoyage des vitres intérieur</li>
-    </ul>
-</div>
-<div class="service">
-    <h3>Lavage régulier (74,99$) +25$ VAN</h3>
-    <ul>
-        <li>Lavage extérieur complet + intérieur complet</li>
-    </ul>
-</div>
-<div class="service">
-    <h3>Lavage super (149,99$) +25$ VAN</h3>
-    <ul>
-        <li>Lavage régulier + shampoing tissu complet</li>
-    </ul>
-</div>
-<div class="service">
-    <h3>Shampoing des sièges (49,99$) +10$ VAN</h3>
-</div>
+
+<section class="service-section">
+    <div class="service">
+        <h3>Lavage Extérieur (39,99$)</h3>
+        <p>Nettoyage complet de la carrosserie</p>
+        <p>Lavage des jantes et traitement de roues</p>
+        <p>Nettoyage des vitres extérieur</p>
+        <p>Séchage manuel pour une finition sans trace</p>
+        <p>Application de produit cirage sur la carrosserie</p>
+    </div>
+
+    <div class="service">
+        <h3>Lavage Intérieur (49,99$) +10$ SUV/VAN</h3>
+        <p>Aspirateur complet (siège, tapis, coffre)</p>
+        <p>Nettoyage des surfaces plastiques</p>
+        <p>Dépoussiérage minutieux</p>
+        <p>Nettoyage des vitres intérieur</p>
+    </div>
+
+    <div class="service">
+        <h3>Lavage Régulier (74,99$) +25$ VAN</h3>
+        <p>Lavage complet (Ext. & Int.)</p>
+        <p>Nettoyage complet de la carrosserie</p>
+        <p>Lavage des jantes et traitement de roues</p>
+        <p>Nettoyage des vitres extérieur</p>
+        <p>Séchage manuel pour une finition sans trace</p>
+        <p>Aspirateur complet (siège, tapis, coffre)</p>
+        <p>Nettoyage des surfaces plastiques</p>
+        <p>Dépoussiérage minutieux</p>
+    </div>
+
+    <div class="service">
+        <h3>Lavage Super (149,99$) +25$ VAN</h3>
+        <p>Lavage complet (Ext. & Int.) + shampoing des sièges et sol</p>
+    </div>
+
+    <div class="service">
+        <h3>Shampoing des sièges (49,99$) +10$ VAN</h3>
+    </div>
 </section>
-<section>
-    <h2>Prendre rendez-vous</h2>
-    <form>
-        <input type="text" placeholder="Nom complet" required>
-        <input type="email" placeholder="Adresse email" required>
-        <input type="tel" placeholder="Numéro de téléphone" required>
-        <input type="text" placeholder="Adresse à domicile" required>
-        <select id="type" onchange="updatePrice()" required>
-            <option value="">Choisissez le type de lavage</option>
-            <option value="Lavage extérieur">Lavage extérieur</option>
-            <option value="Lavage intérieur">Lavage intérieur</option>
-            <option value="Lavage régulier">Lavage régulier</option>
-            <option value="Lavage super">Lavage super</option>
-            <option value="Shampoing des sièges">Shampoing des sièges</option>
-        </select>
-        <p id="price-display"></p>
-        <input type="date" required>
-        <input type="time" min="08:00" max="16:00" required>
+
+<section class="form-container">
+    <h2>Réservez un Rendez-vous</h2>
+    <form action="mailto:info.lavemoichezmo@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Nom Complet" required><br>
+        <input type="email" name="email" placeholder="Adresse Email" required><br>
+        <input type="tel" name="phone" placeholder="Numéro de Téléphone" required><br>
+        <input type="text" name="address" placeholder="Adresse à Domicile" required><br>
+        <select name="service" id="service" required>
+            <option value="Lavage Extérieur (39,99$)">Lavage Extérieur (39,99$)</option>
+            <option value="Lavage Intérieur (49,99$)">Lavage Intérieur (49,99$)</option>
+            <option value="Lavage Régulier (74,99$)">Lavage Régulier (74,99$)</option>
+            <option value="Lavage Super (149,99$)">Lavage Super (149,99$)</option>
+            <option value="Shampoing des sièges (49,99$)">Shampoing des sièges (49,99$)</option>
+        </select><br>
+        <input type="date" name="date" required><br>
+        <input type="time" name="time" min="08:00" max="16:00" required><br>
         <button type="submit">Réserver</button>
     </form>
 </section>
-<section class="contact">
+
+<section class="contact-section">
     <h2>Contactez-nous</h2>
-    <p>Email : <a href="mailto:info.lavemoichezmoi@gmail.com">info.lavemoichezmoi@gmail.com</a></p>
-    <p>Téléphone : <a href="tel:8736623813">8736623813</a></p>
-    <p><a href="sms:8736623813">Envoyer un texto</a></p>
-    <p><a href="https://www.instagram.com/lavemoichezmoi/" target="_blank">Notre Instagram</a></p>
+    <p class="contact-info">Email : info.lavemoichezmo@gmail.com</p>
+    <p class="contact-info">Numéro de téléphone : 8736623813</p>
+    <p><a href="sms:8736623813" class="contact-info">Envoyer un Texto</a></p>
+    <p><a href="https://www.instagram.com/lavemoichezmoi/" class="contact-info" target="_blank">Instagram</a></p>
 </section>
-<section class="map">
-<iframe src="https://www.google.com/maps?q=Sherbrooke,+QC&output=embed" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<section class="map-section">
+    <h2>Nos Services à Sherbrooke</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2708.472054057423!2d-71.88587980000002!3d45.400982299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc1b0b0b0b0b0b0%3A0xb0b0b0b0b0b0b0b0!2sSherbrooke%2C%20QC!5e0!3m2!1sen!2sca!4v1679660634189!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </section>
+
 </body>
 </html>

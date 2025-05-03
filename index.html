@@ -111,7 +111,7 @@
 
 <header>
     <h1>Lave Moi Chez Moi</h1>
-    <p>Nous offrons un service de lavage automobile à domicile — Sherbrooke et ses environs</p>
+    <p>Nous offrons un service de lavage automobile à domicile en Estrie</p>
 </header>
 
 <section>
@@ -138,28 +138,23 @@
 
 </section>
 
-<section>
-    <h2>Prendre un rendez-vous</h2>
-    <form action="https://formsubmit.co/info.lavemoichezmoi@gmail.com" method="POST">
-        
-        <label>Nom complet :</label><br>
-        <input type="text" name="Nom complet" required><br>
-
-        <label>Téléphone :</label><br>
-        <input type="tel" name="Téléphone" required><br>
-
-        <label>Type de lavage :</label><br>
-        <select name="Type de lavage" required>
-            <option value="Lavage intérieur">Lavage intérieur - 49,99 $</option>
-            <option value="Lavage extérieur">Lavage extérieur - 39,99 $</option>
-            <option value="Lavage régulier">Lavage régulier (int. + ext.) - 74,99 $</option>
-            <option value="Lavage super">Lavage super - 149,99 $</option>
-        </select><br>
-
-        <label>Date souhaitée :</label><br>
-        <input type="date" name="Date souhaitée" required><br>
-
-        <button type="submit">Envoyer</button>
+  <section>
+    <h2>Prendre rendez-vous</h2>
+    <form action="https://formspree.io/f/mqkvyvky" method="POST">
+      <input type="text" name="nom" placeholder="Nom complet" required>
+      <input type="email" name="email" placeholder="Adresse email" required>
+      <input type="tel" name="telephone" placeholder="Numéro de téléphone" required>
+      <input type="text" name="adresse" placeholder="Adresse à domicile" required>
+      <select name="type_lavage" required>
+        <option value="Lavage extérieur">Lavage extérieur</option>
+        <option value="Lavage intérieur">Lavage intérieur</option>
+        <option value="Lavage régulier">Lavage régulier</option>
+        <option value="Lavage super">Lavage super</option>
+        <option value="Shampoing des sièges">Shampoing des sièges</option>
+      </select>
+      <input type="date" name="date_rdv" required>
+      <input type="time" name="heure_rdv" min="08:00" max="18:00" required>
+      <button type="submit">Réserver</button>
     </form>
 </section>
 

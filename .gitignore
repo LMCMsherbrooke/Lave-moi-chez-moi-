@@ -9,3 +9,13 @@ Dependencies.toml
 Config.toml
 # the config files used for testing, Uncomment the following line if you want to commit the test config files
 #!**/tests/Config.toml
+/Lave-moi-chez-moi-/
+ ├── images/
+ │    ├── IMG_exterieur.webp
+ │    ├── IMG_interieur.avif
+ │    ├── IMG_regulier.jpg
+ │    ├── IMG_remise_a_neuf.jpg
+ │    └── IMG_siege.jpg
+ ├── index.html
+ ├── style.css
+ └── ...

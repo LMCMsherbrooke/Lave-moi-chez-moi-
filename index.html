@@ -109,16 +109,35 @@
 </section>
 <section>
   <h2>Exemples de nos services (Avant / Après)</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <img src="IMG_4477.jpeg" alt="Lavage auto 1" style="width: 200px;">
-    <img src="IMG_4478.jpeg" alt="Lavage auto 2" style="width: 200px;">
-    <img src="IMG_4498.jpeg" alt="Lavage auto 3" style="width: 200px;">
-    <img src="IMG_4499.jpeg" alt="Lavage auto 4" style="width: 200px;">
-    <img src="IMG_4628.jpeg" alt="Lavage auto 5" style="width: 200px;">
-    <img src="IMG_4637.jpeg" alt="Lavage auto 6" style="width: 200px;">
-    <img src="IMG_5418.jpeg" alt="Lavage auto 7" style="width: 200px;">
-    <img src="IMG_5439.jpeg" alt="Lavage auto 8" style="width: 200px;">
+  <section style="text-align:center; margin: 40px 0;">
+  <h2>Exemples de nos services (Avant / Après)</h2>
+
+  <div style="max-width:600px; margin:auto; position:relative;">
+    <img id="slider" src="IMG_4477.jpeg" alt="Service LMCM" style="width:100%; border-radius:10px;">
   </div>
+
+  <script>
+    const images = [
+      'IMG_4477.jpeg',
+      'IMG_4478.jpeg',
+      'IMG_4498.jpeg',
+      'IMG_4499.jpeg',
+      'IMG_4628.jpeg',
+      'IMG_4637.jpeg',
+      'IMG_5418.jpeg',
+      'IMG_5439.jpeg'
+    ];
+
+    let currentIndex = 0;
+    const slider = document.getElementById('slider');
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      slider.src = images[currentIndex];
+    }, 4000); // change image every 3 seconds
+  </script>
+</section>
+
 </section>
 
 <section>

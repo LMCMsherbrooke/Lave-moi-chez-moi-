@@ -17,5 +17,5 @@ Config.toml
  │    ├── IMG_remise_a_neuf.jpg
  │    └── IMG_siege.jpg
  ├── index.html
- ├── style.index
+ ├── style.css
  └── ...

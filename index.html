@@ -234,13 +234,13 @@
 
 <section>
   <h2> Réservez dès maintenant !</h2>
-  <form action="https://formsubmit.co/info.lavemoichezmoi@gmail.com" method="POST" onsubmit="return confirmReservation()">
-    
+  <form action="https://formsubmit.co/info.lavemoichezmoi@gmail.com" method="POST">
+
     <input type="text" name="Nom Complet" placeholder="Nom complet" required>
     <input type="email" name="Email" placeholder="Adresse email" required>
     <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required>
     <input type="text" name="Adresse" placeholder="Adresse à domicile" required>
-    
+
     <select name="Type de lavage" id="lavage" onchange="showPrice()" required>
       <option value="">Choisir un service</option>
       <option value="Lavage Extérieur">Lavage Extérieur - 39,99$</option>
@@ -253,32 +253,25 @@
     <input type="date" name="Date" required>
     <p id="prix"></p>
 
-    <!-- Auto-réponse HTML -->
+    <!-- Auto-réponse email HTML -->
     <input type="hidden" name="_autoresponse" value="
-    <html>
-      <body style='font-family: Arial, sans-serif;'>
-        <h2 style='color: #007BFF;'>Merci pour votre réservation avec <strong>LAVE MOI CHEZ MOI</strong>!</h2>
-        <p>Nous avons bien reçu votre demande de rendez-vous.</p>
-        <p>Un membre de notre équipe vous contactera dans les prochaines 24 heures pour confirmer l'heure et les détails de votre service.</p>
-        <p>Si personne ne vous a contacté d’ici là, n’hésitez pas à nous appeler directement au 
-          <a href='tel:+18736623813' style='color: #007BFF; text-decoration: none;'>873-662-3813</a>.
-        </p>
-        <p style='margin-top: 20px;'>Merci et à très bientôt !</p>
-      </body>
-    </html>
+    Merci pour votre réservation avec LAVE MOI CHEZ MOI !
+
+    Nous avons bien reçu votre demande de rendez-vous. Un membre de notre équipe vous contactera dans les prochaines 24 heures pour confirmer l'heure et les détails.
+
+    Si personne ne vous a contacté d’ici là, n’hésitez pas à nous appeler directement au 873-662-3813.
+
+    Merci et à très bientôt !
     ">
+
+    <!-- Option pour rediriger vers une page de confirmation après envoi -->
+    <input type="hidden" name="_next" value="https://tonsite.com/merci.html">
 
     <button type="submit">Réserver</button>
   </form>
 </section>
 
 <script>
-  // Message de confirmation à l'envoi du formulaire
-  function confirmReservation() {
-    alert("Merci pour votre réservation avec LAVE MOI CHEZ MOI !\n\nNous avons bien reçu votre demande de rendez-vous. Un membre de notre équipe vous contactera dans les prochaines 24 heures pour confirmer l'heure et d'autres détails.\n\nSi personne ne vous a contacté d’ici là, n’hésitez pas à nous appeler directement au 873-662-3813.\n\nMerci et à très bientôt !");
-    return true; // Continue l'envoi du formulaire
-  }
-
   // Affichage du prix sélectionné
   function showPrice() {
     const prix = document.getElementById("lavage").value;
@@ -286,6 +279,7 @@
     prixText.innerHTML = prix ? "Vous avez choisi : " + prix : "";
   }
 </script>
+
 
 
 <section class="contact">

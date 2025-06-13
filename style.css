@@ -9,6 +9,9 @@ body {
 }
 
 .logo-container img {
-  width: 100px; /* ajuste la taille si tu veux */
+  width: 100%;
+  max-width: 200px;
   height: auto;
+  display: block;
 }
+

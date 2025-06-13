@@ -9,6 +9,7 @@
     :root {
       --primary-color: #007BFF;
       --secondary-color: #f2f8ff;
+  
       --text-color: #333;
       --white: #ffffff;
       --hover-color: #0056b3;
@@ -61,15 +62,11 @@
       padding: 1.5rem;
       background-color: var(--secondary-color);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-      display: block;
     }
 
     .service-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
     }
 
     .service-card h3 {
@@ -81,6 +78,36 @@
       text-align: left;
       list-style: disc;
       padding-left: 1.5rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
+      background-color: var(--secondary-color);
+    }
+
+    form input, form select, form button {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form button {
+      background-color: var(--primary-color);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: var(--hover-color);
     }
 
     .contact {
@@ -110,6 +137,47 @@
       border-radius: 10px;
     }
 
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content p {
+      margin-bottom: 1rem;
+    }
+
+    .modal-content button {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal-content button:hover {
+      background-color: var(--hover-color);
+    }
+
     @media (max-width: 768px) {
       header {
         font-size: 1.8rem;
@@ -117,6 +185,10 @@
 
       .services {
         grid-template-columns: 1fr;
+      }
+
+      form {
+        padding: 1rem;
       }
     }
   </style>
@@ -129,13 +201,14 @@
     <p class="blue-text">Des tarifs imbattables pour un service de qualité</p>
     <p>Profitez d’un lavage automobile professionnel, offert directement à votre domicile partout en Estrie. Service rapide, soigné et au meilleur rapport qualité-prix.</p>
   </section>
-
-  <section>
-    <h2>Nos services</h2>
-  </section>
-
+<section>
+  <h2> Nos services </h2>
+</section>
+    </script>
+</body>
+</html>
   <section class="services">
-    <a href="reservation.html?service=Lavage_Exterieur" class="service-card">
+    <div class="service-card">
       <h3>Lavage Extérieur</h3>
       <p><strong>29,99$</strong></p>
       <ul>
@@ -145,9 +218,9 @@
         <li>Séchage manuel sans trace</li>
         <li>Nettoyage autour des portes</li>
       </ul>
-    </a>
+    </div>
 
-    <a href="reservation.html?service=Lavage_Interieur" class="service-card">
+    <div class="service-card">
       <h3>Lavage Intérieur</h3>
       <p><strong>49,99$ (+15$ SUV/ +25 Camion/Van)</strong></p>
       <ul>
@@ -156,31 +229,52 @@
         <li>Dépoussiérage minutieux</li>
         <li>Nettoyage des vitres intérieur</li>
       </ul>
-    </a>
+    </div>
 
-    <a href="reservation.html?service=Lavage_Regulier" class="service-card">
-      <h3>Lavage Régulier (ext & int)</h3>
+    <div class="service-card">
+      <h3>Lavage Régulier ( ext & int )</h3>
       <p><strong>74,99$ (+15$ SUV/ +25 Camion/Van)</strong></p>
       <ul>
         <li>Tous les services extérieur et intérieur</li>
       </ul>
-    </a>
+    </div>
 
-    <a href="reservation.html?service=Remise_a_Neuf" class="service-card">
+    <div class="service-card">
       <h3>Remise à neuf</h3>
       <p><strong>139,99$ (+15$ SUV/ +40 Camion/Van)</strong></p>
       <ul>
         <li>Lavage régulier + shampoing sol et sièges</li>
       </ul>
-    </a>
+    </div>
 
-    <a href="reservation.html?service=Shampoing_Sieges" class="service-card">
+    <div class="service-card">
       <h3>Shampoing des sièges</h3>
       <p><strong>49,99$ (+25$ SUV/Camion/Van)</strong></p>
       <ul>
         <li>Shampoing professionnel des sièges</li>
       </ul>
-    </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Réservez dès maintenant !</h2>
+<form action="https://formsubmit.co/info.shineautomobile@gmail.com" method="POST" onsubmit="showModal(); return true;">
+  <input type="text" name="Nom Complet" placeholder="Nom complet" required aria-label="Nom complet">
+  <input type="text" name="Type de voiture" placeholder="Type de voiture (ex: Sedan, SUV, Camion)" required aria-label="Type de voiture">
+  <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required aria-label="Numéro de téléphone">
+  <input type="text" name="Adresse" placeholder="Adresse à domicile" required aria-label="Adresse à domicile">
+  <select name="Type de lavage" id="lavage" onchange="showPrice()" required aria-label="Type de lavage">
+    <option value="">Choisir un service</option>
+    <option value="Lavage Extérieur">Lavage Extérieur - 29,99$</option>
+    <option value="Lavage Intérieur">Lavage Intérieur - 49,99$ (+25$ SUV/Camion/Van)</option>
+    <option value="Lavage Régulier">Lavage Régulier - 74,99$ (+25$ SUV/Camion/Van)</option>
+    <option value="Remise à neuf">Remise à neuf - 149,99$ (+25$ SUV/Camion/Van)</option>
+    <option value="Shampoing des sièges">Shampoing des sièges - 49,99$ (+25$ SUV/Camion/Van)</option>
+  </select>
+  <input type="date" name="Date" required aria-label="Date de réservation">
+  <p id="prix" aria-live="polite"></p>
+  <button type="submit">Réserver</button>
+</form>
   </section>
 
   <section class="contact">
@@ -194,5 +288,33 @@
   <div class="map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27742.879392138616!2d-71.93583354999999!3d45.4001107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb7e40ca0f3e2bd%3A0x8a2e8f683678bc88!2sSherbrooke%2C%20QC!5e0!3m2!1sfr!2sca!4v1684450605089" allowfullscreen title="Carte de Sherbrooke, QC"></iframe>
   </div>
+
+  <!-- Modal -->
+  <div class="modal" id="confirmationModal">
+    <div class="modal-content">
+      <h3>Merci pour votre réservation !</h3>
+      <p>Votre demande a été reçue. Nous vous contacterons dans les 24h pour confirmer votre rendez-vous.</p>
+      <p>Pour toute question, appelez-nous au <a href="tel:8736623813">873-662-3813</a>.</p>
+      <button onclick="closeModal()">Fermer</button>
+    </div>
+  </div>
+
+  <script>
+    function showPrice() {
+      const type = document.getElementById("lavage").value;
+      const prix = document.getElementById("prix");
+      prix.innerHTML = type ? `Vous avez choisi : ${type}` : "";
+    }
+
+    function showModal() {
+      const modal = document.getElementById("confirmationModal");
+      modal.style.display = "flex";
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("confirmationModal");
+      modal.style.display = "none";
+    }
+  </script>
 </body>
 </html>

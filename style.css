@@ -4,11 +4,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
   background-color: #f0f8ff; /* bleu très clair */
 }
 
 .logo-container img {
-  width: 300px; /* ajuste la taille si tu veux */
+  width: 100px; /* ajuste la taille si tu veux */
   height: auto;
 }

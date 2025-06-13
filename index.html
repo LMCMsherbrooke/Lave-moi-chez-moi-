@@ -276,6 +276,16 @@
   <button type="submit">Réserver</button>
 </form>
   </section>
+<p class="important-notice">* Important : des frais applicables pour les services à l’extérieur de Sherbrooke</p>
+
+  <script>
+    // Récupérer le paramètre 'service' depuis l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const service = urlParams.get('service').replace(/_/g, ' ');
+    document.getElementById('service').value = service || 'Service non spécifié';
+  </script>
+</body>
+</html>
 
   <section class="contact">
     <h2>Contactez-nous</h2>

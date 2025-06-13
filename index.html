@@ -2,270 +2,313 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title> shineautomobile - Lavage auto à domicile en Estrie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Service de lavage automobile à domicile en Estrie. Qualité professionnelle à prix imbattables.">
+  <title>Shine Automobile - Lavage auto à domicile en Estrie</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --primary-color: #007BFF;
+      --secondary-color: #f2f8ff;
+      --text-color: #333;
+      --white: #ffffff;
+      --hover-color: #0056b3;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #ffffff;
-      color: #333;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--white);
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
     header {
-      background-color: #007BFF;
-      color: white;
-      padding: 20px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 2rem;
       text-align: center;
-      font-size: 30px;
+      font-size: 2.5rem;
       font-weight: bold;
     }
 
     section {
-      padding: 20px;
+      padding: 2rem;
       text-align: center;
     }
 
     .blue-text {
-      color: #007BFF;
+      color: var(--primary-color);
       font-weight: bold;
     }
 
     .services {
-      display: block;
-      padding: 20px;
-      max-width: 500px;
+      max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
     }
 
     .service-card {
-      border: 2px solid #007BFF;
+      border: 2px solid var(--primary-color);
       border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      background-color: #f2f8ff;
+      padding: 1.5rem;
+      background-color: var(--secondary-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .service-card h3 {
-      color: #007BFF;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .service-card ul {
+      text-align: left;
+      list-style: disc;
+      padding-left: 1.5rem;
     }
 
     form {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 2px solid #007BFF;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border: 2px solid var(--primary-color);
       border-radius: 10px;
-      background-color: #f2f8ff;
+      background-color: var(--secondary-color);
     }
 
     form input, form select, form button {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
       border-radius: 5px;
       border: 1px solid #ccc;
+      font-size: 1rem;
     }
 
     form button {
-      background-color: #007BFF;
-      color: white;
+      background-color: var(--primary-color);
+      color: var(--white);
       border: none;
-      font-size: 18px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     form button:hover {
-      background-color: #0056b3;
+      background-color: var(--hover-color);
     }
 
     .contact {
-      padding: 20px;
+      padding: 2rem;
       text-align: center;
     }
 
+    .contact a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
     .map {
-      margin: 20px auto;
+      margin: 2rem auto;
       text-align: center;
     }
 
     .map iframe {
-      width: 90%;
+      width: 100%;
+      max-width: 800px;
       height: 300px;
       border: none;
       border-radius: 10px;
     }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content p {
+      margin-bottom: 1rem;
+    }
+
+    .modal-content button {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal-content button:hover {
+      background-color: var(--hover-color);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.8rem;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      form {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
-
 <body>
+  <header>Shine Automobile</header>
 
-<header>shineautomobile</header>
+  <section>
+    <h2>Service de lavage automobile à domicile en Estrie</h2>
+    <p class="blue-text">Des tarifs imbattables pour un service de qualité</p>
+    <p>Profitez d’un lavage automobile professionnel, offert directement à votre domicile partout en Estrie. Service rapide, soigné et au meilleur rapport qualité-prix.</p>
+  </section>
 
-<section>
-  <h2>Service de lavage automobile à domicile en Estrie</h2>
-  <p class="blue-text">Des tarifs imbattables pour un service de qualité</p>
-  <p>Profitez d’un lavage automobile professionnel, offert directement à votre domicile partout en Estrie. Service rapide, soigné et au meilleur rapport qualité-prix. </p>
-</section>
-<section>
-  <section style="text-align:center; margin: 40px 0;">
+  <section class="services">
+    <div class="service-card">
+      <h3>Lavage Extérieur</h3>
+      <p><strong>29,99$</strong></p>
+      <ul>
+        <li>Nettoyage complet de la carrosserie</li>
+        <li>Lavage des jantes et traitement de roues</li>
+        <li>Nettoyage des vitres extérieur</li>
+        <li>Séchage manuel sans trace</li>
+        <li>Nettoyage autour des portes</li>
+      </ul>
+    </div>
 
-</section>
+    <div class="service-card">
+      <h3>Lavage Intérieur</h3>
+      <p><strong>49,99$ (+25$ SUV/Camion/Van)</strong></p>
+      <ul>
+        <li>Aspirateur complet (sièges, tapis, coffre)</li>
+        <li>Nettoyage des surfaces plastiques</li>
+        <li>Dépoussiérage minutieux</li>
+        <li>Nettoyage des vitres intérieur</li>
+      </ul>
+    </div>
 
-</section>
+    <div class="service-card">
+      <h3>Lavage Régulier</h3>
+      <p><strong>74,99$ (+25$ SUV/Camion/Van)</strong></p>
+      <ul>
+        <li>Tous les services extérieur et intérieur</li>
+      </ul>
+    </div>
 
-<div class="services"> 
+    <div class="service-card">
+      <h3>Remise à neuf</h3>
+      <p><strong>149,99$ (+25$ SUV/Camion/Van)</strong></p>
+      <ul>
+        <li>Lavage régulier + shampoing sol et sièges</li>
+      </ul>
+    </div>
 
-  <div class="service-card"> 
+    <div class="service-card">
+      <h3>Shampoing des sièges</h3>
+      <p><strong>49,99$ (+25$ SUV/Camion/Van)</strong></p>
+      <ul>
+        <li>Shampoing professionnel des sièges</li>
+      </ul>
+    </div>
+  </section>
 
-    <h3>Lavage Extérieur</h3> 
-    <p><strong>29,99$</strong></p> 
+  <section>
+    <h2>Réservez dès maintenant !</h2>
+    <form action="https://formsubmit.co/info.shineautomobile@gmail.com" method="POST" onsubmit="showModal(); return true;">
+      <input type="text" name="Nom Complet" placeholder="Nom complet" required aria-label="Nom complet">
+      <input type="email" name="Email" placeholder="Adresse email" required aria-label="Adresse email">
+      <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required aria-label="Numéro de téléphone">
+      <input type="text" name="Adresse" placeholder="Adresse à domicile" required aria-label="Adresse à domicile">
+      <select name="Type de lavage" id="lavage" onchange="showPrice()" required aria-label="Type de lavage">
+        <option value="">Choisir un service</option>
+        <option value="Lavage Extérieur">Lavage Extérieur - 29,99$</option>
+        <option value="Lavage Intérieur">Lavage Intérieur - 49,99$ (+25$ SUV/Camion/Van)</option>
+        <option value="Lavage Régulier">Lavage Régulier - 74,99$ (+25$ SUV/Camion/Van)</option>
+        <option value="Remise à neuf">Remise à neuf - 149,99$ (+25$ SUV/Camion/Van)</option>
+        <option value="Shampoing des sièges">Shampoing des sièges - 49,99$ (+25$ SUV/Camion/Van)</option>
+      </select>
+      <input type="date" name="Date" required aria-label="Date de réservation">
+      <p id="prix" aria-live="polite"></p>
+      <button type="submit">Réserver</button>
+    </form>
+  </section>
 
-    <ul style="text-align:left"> 
+  <section class="contact">
+    <h2>Contactez-nous</h2>
+    <p>📧 Email : <a href="mailto:info.shineautomobile@gmail.com">info.shineautomobile@gmail.com</a></p>
+    <p>📞 Téléphone : <a href="tel:8736623813">873-662-3813</a></p>
+    <p>💬 <a href="sms:+18736623813">Envoyez-nous un texto</a></p>
+    <p>📸 <a href="https://www.instagram.com/shineautomobile_/" target="_blank" rel="noopener">Suivez-nous sur Instagram</a></p>
+  </section>
 
-      <li>Nettoyage complet de la carrosserie</li> 
+  <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27742.879392138616!2d-71.93583354999999!3d45.4001107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb7e40ca0f3e2bd%3A0x8a2e8f683678bc88!2sSherbrooke%2C%20QC!5e0!3m2!1sfr!2sca!4v1684450605089" allowfullscreen title="Carte de Sherbrooke, QC"></iframe>
+  </div>
 
-      <li>Lavage des jantes et traitement de roues</li> 
+  <!-- Modal -->
+  <div class="modal" id="confirmationModal">
+    <div class="modal-content">
+      <h3>Merci pour votre réservation !</h3>
+      <p>Votre demande a été reçue. Nous vous contacterons dans les 24h pour confirmer votre rendez-vous.</p>
+      <p>Pour toute question, appelez-nous au <a href="tel:8736623813">873-662-3813</a>.</p>
+      <button onclick="closeModal()">Fermer</button>
+    </div>
+  </div>
 
-      <li>Nettoyage des vitres extérieur</li> 
+  <script>
+    function showPrice() {
+      const type = document.getElementById("lavage").value;
+      const prix = document.getElementById("prix");
+      prix.innerHTML = type ? `Vous avez choisi : ${type}` : "";
+    }
 
-      <li>Séchage manuel sans trace</li> 
+    function showModal() {
+      const modal = document.getElementById("confirmationModal");
+      modal.style.display = "flex";
+    }
 
-      <li>Nettoyage autour des portes</li> 
-
-    </ul> 
-
-  </div> 
-
-  
-
-  <div class="service-card"> 
-
-    <h3>Lavage Intérieur</h3> 
-
-    <p><strong>49,99$ + 25$ SUV/CAMION/VAN</strong></p> 
-
-    <ul style="text-align:left"> 
-
-      <li>Aspirateur complet (siège, tapis, coffre)</li> 
-
-      <li>Nettoyage des surfaces plastiques</li> 
-
-      <li>Dépoussiérage minutieux</li> 
-
-      <li>Nettoyage des vitres intérieur</li> 
-
-    </ul> 
-
-  </div> 
-
-  
-
-  <div class="service-card"> 
-
-    <h3>Lavage Régulier</h3> 
-
-    <p><strong> 74,99$ + 25$ SUV/CAMION/VAN</strong></p> 
-
-    <ul style="text-align:left"> 
-
-      <li>Tous les services extérieur et intérieur</li> 
-
-    </ul> 
-
-  </div> 
-
-
-
-  <div class="service-card"> 
-
-    <h3>Remise à neuf</h3> 
-
-    <p><strong>149,99$ + 25$ SUV/CAMION/VAN</strong></p> 
-
-    <ul style="text-align:left"> 
-
-      <li>Lavage régulier + shampoing sol et sièges</li> 
-
-    </ul> 
-
-  </div> 
-
-  
-
-  <div class="service-card"> 
-
-    <h3>Shampoing des sièges</h3> 
-
-    <p><strong>49,99$ + 25$ SUV/CAMION/VAN</strong></p> 
-
-  </div> 
-
-</div> 
-
-
-<section>
-  <h2> Réservez dès maintenant !</h2>
-  <form action="https://formsubmit.co/info.shineautomobile@gmail.com" method="POST" onsubmit="return confirmReservation()">
-    <input type="text" name="Nom Complet" placeholder="Nom complet" required>
-    <input type="email" name="Email" placeholder="Adresse email" required>
-    <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required>
-    <input type="text" name="Adresse" placeholder="Adresse à domicile" required>
-    
-    <select name="Type de lavage" id="lavage" onchange="showPrice()" required>
-      <option value="">Choisir un service</option>
-      <option value="Lavage Extérieur">Lavage Extérieur - 29,99$</option>
-      <option value="Lavage Intérieur">Lavage Intérieur - 49,99$ +25 SUV/CAMION/VAN </option>
-      <option value="Lavage Régulier">Lavage Régulier - 74,99$ + 25 SUV/CAMION/VAN </option>
-      <option value="Lavage Super">Lavage Super - 149,99$ + 50 SUV/CAMION/VAN</option>
-      <option value="Shampoing des sièges">Shampoing des sièges - 49,99$ + 25 SUV/CAMION/VAN </option>
-    </select>
-
-    <input type="date" name="Date" required>
-    <p id="prix"></p>
-
-    <button type="submit">Réserver</button>
-  </form>
-</section>
-
-<script>
-  function confirmReservation() {
-    alert("Merci pour votre réservation avec shineautomobile !\n\nNous avons bien reçu votre demande de rendez-vous. Un membre de notre équipe vous contactera dans les prochaines 24 heures pour confirmer l'heure et d'autres détails.\n\nSi personne ne vous a contacté d’ici là, n’hésitez pas à nous appeler directement au 873-662-3813.\n\nMerci et à très bientôt !");
-    return true; // permet au formulaire de continuer l'envoi après l'alerte
-  }
-
-  function showPrice() {
-    const prix = document.getElementById("lavage").value;
-    const prixText = document.getElementById("prix");
-    prixText.innerHTML = prix ? "Vous avez choisi : " + prix : "";
-  }
-</script>
-
-
-
-<section class="contact">
-  <h2>Contactez-nous</h2>
-  <p>📧 Email : <a href="mailto:info.shineautomobile@gmail.com">info.shineautomobile@gmail.com</a></p>
-  <p>📞 Téléphone : <a href="tel:8736623813">873-662-3813</a></p>
-  <p>💬 <a href="sms:+18736623813">Envoyez-nous un texto</a></p>
-  <p>📸 <a href="https://www.instagram.com/shineautomobile_/" target="_blank">Suivez-nous sur Instagram</a></p>
-</section>
-
-<div class="map">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27742.879392138616!2d-71.93583354999999!3d45.4001107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb7e40ca0f3e2bd%3A0x8a2e8f683678bc88!2sSherbrooke%2C%20QC!5e0!3m2!1sfr!2sca!4v1684450605089" allowfullscreen></iframe>
-</div>
-
-<script>
-function showPrice() {
-  var type = document.getElementById("lavage").value;
-  var prix = document.getElementById("prix");
-  prix.innerHTML = "Prix : " + (type.includes("Extérieur") ? "39,99$" :
-                                type.includes("Intérieur") ? "49,99$" :
-                                type.includes("Régulier") ? "74,99$" :
-                                type.includes("Super") ? "149,99$" :
-                                type.includes("Shampoing") ? "49,99$" : "");
-}
-</script>
-
+    function closeModal() {
+      const modal = document.getElementById("confirmationModal");
+      modal.style.display = "none";
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réservation - Shine Automobile</title>
+  <style>
+    :root {
+      --primary-color: #007BFF;
+      --secondary-color: #f2f8ff;
+      --text-color: #333;
+      --white: #ffffff;
+      --hover-color: #0056b3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--white);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 2rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
+      background-color: var(--secondary-color);
+    }
+
+    form input, form select, form button {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form button {
+      background-color: var(--primary-color);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: var(--hover-color);
+    }
+
+    @media (max-width: 768px) {
+      form {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Réservation - Shine Automobile</header>
+
+  <form action="https://formsubmit.co/info.shineautomobile@gmail.com" method="POST">
+    <input type="text" name="Nom Complet" placeholder="Nom complet" required aria-label="Nom complet">
+    <input type="text" name="Type de voiture" placeholder="Type de voiture (ex: Sedan, SUV, Camion)" required aria-label="Type de voiture">
+    <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required aria-label="Numéro de téléphone">
+    <input type="text" name="Adresse" placeholder="Adresse à domicile" required aria-label="Adresse à domicile">
+    <input type="text" name="Type de lavage" id="service" readonly aria-label="Service sélectionné">
+    <input type="date" name="Date" required aria-label="Date de réservation">
+    <button type="submit">Réserver</button>
+  </form>
+
+  <script>
+    // Récupérer le paramètre 'service' depuis l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const service = urlParams.get('service').replace(/_/g, ' ');
+    document.getElementById('service').value = service || 'Service non spécifié';
+  </script>
+</body>
+</html>

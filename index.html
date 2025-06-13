@@ -9,6 +9,7 @@
     :root {
       --primary-color: #007BFF;
       --secondary-color: #f2f8ff;
+  
       --text-color: #333;
       --white: #ffffff;
       --hover-color: #0056b3;
@@ -252,23 +253,23 @@
 
   <section>
     <h2>Réservez dès maintenant !</h2>
-    <form action="https://formsubmit.co/info.shineautomobile@gmail.com" method="POST" onsubmit="showModal(); return true;">
-      <input type="text" name="Nom Complet" placeholder="Nom complet" required aria-label="Nom complet">
-      <input type="email" name="Email" placeholder="Adresse email" required aria-label="Adresse email">
-      <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required aria-label="Numéro de téléphone">
-      <input type="text" name="Adresse" placeholder="Adresse à domicile" required aria-label="Adresse à domicile">
-      <select name="Type de lavage" id="lavage" onchange="showPrice()" required aria-label="Type de lavage">
-        <option value="">Choisir un service</option>
-        <option value="Lavage Extérieur">Lavage Extérieur - 29,99$</option>
-        <option value="Lavage Intérieur">Lavage Intérieur - 49,99$ (+25$ SUV/Camion/Van)</option>
-        <option value="Lavage Régulier">Lavage Régulier - 74,99$ (+25$ SUV/Camion/Van)</option>
-        <option value="Remise à neuf">Remise à neuf - 149,99$ (+25$ SUV/Camion/Van)</option>
-        <option value="Shampoing des sièges">Shampoing des sièges - 49,99$ (+25$ SUV/Camion/Van)</option>
-      </select>
-      <input type="date" name="Date" required aria-label="Date de réservation">
-      <p id="prix" aria-live="polite"></p>
-      <button type="submit">Réserver</button>
-    </form>
+<form action="https://formsubmit.co/info.shineautomobile@gmail.com" method="POST" onsubmit="showModal(); return true;">
+  <input type="text" name="Nom Complet" placeholder="Nom complet" required aria-label="Nom complet">
+  <input type="text" name="Type de voiture" placeholder="Type de voiture (ex: Sedan, SUV, Camion)" required aria-label="Type de voiture">
+  <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required aria-label="Numéro de téléphone">
+  <input type="text" name="Adresse" placeholder="Adresse à domicile" required aria-label="Adresse à domicile">
+  <select name="Type de lavage" id="lavage" onchange="showPrice()" required aria-label="Type de lavage">
+    <option value="">Choisir un service</option>
+    <option value="Lavage Extérieur">Lavage Extérieur - 29,99$</option>
+    <option value="Lavage Intérieur">Lavage Intérieur - 49,99$ (+25$ SUV/Camion/Van)</option>
+    <option value="Lavage Régulier">Lavage Régulier - 74,99$ (+25$ SUV/Camion/Van)</option>
+    <option value="Remise à neuf">Remise à neuf - 149,99$ (+25$ SUV/Camion/Van)</option>
+    <option value="Shampoing des sièges">Shampoing des sièges - 49,99$ (+25$ SUV/Camion/Van)</option>
+  </select>
+  <input type="date" name="Date" required aria-label="Date de réservation">
+  <p id="prix" aria-live="polite"></p>
+  <button type="submit">Réserver</button>
+</form>
   </section>
 
   <section class="contact">

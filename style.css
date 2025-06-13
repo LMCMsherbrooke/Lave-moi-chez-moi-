@@ -9,8 +9,8 @@ body {
 }
 
 .logo-container img {
-  width: 100%;
-  max-width: 200px;
+  width: 20%;
+  max-width: 40px;
   height: auto;
   display: block;
 }

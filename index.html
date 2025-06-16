@@ -197,7 +197,7 @@
   <header>Shine Automobile</header>
 <section>
 </body>
-    <h2>Service de lavage automobile à domicile en Estrie</h2>
+    <h2>Service de lavage automobile à votre domicile partout dans l'Estrie</h2>
     <p class="blue-text">Des tarifs imbattables pour un service de qualité</p>
     <p>Profitez d’un lavage automobile professionnel, offert directement à votre domicile partout en Estrie. Service rapide, soigné et au meilleur rapport qualité-prix.</p>
     </section>
@@ -275,17 +275,17 @@
   <select name="Type de lavage" id="lavage" onchange="showPrice()" required aria-label="Type de lavage">
     <option value="">Choisir un service</option>
     <option value="Lavage Extérieur">Lavage Extérieur - 29,99$</option>
-    <option value="Lavage Intérieur">Lavage Intérieur - 49,99$ (+25$ SUV/Camion/Van)</option>
-    <option value="Lavage Régulier">Lavage Régulier - 74,99$ (+25$ SUV/Camion/Van)</option>
-    <option value="Remise à neuf">Remise à neuf - 149,99$ (+25$ SUV/Camion/Van)</option>
+    <option value="Lavage Intérieur">Lavage Intérieur - 49,99$ (+15$ SUV/ +25 Camion/Van)</option>
+    <option value="Lavage Régulier">Lavage Régulier - 74,99$ (+15$ SUV/ +25 Camion/Van)</option>
+    <option value="Remise à neuf">Remise à neuf - 139,99$ (+15$ SUV/ +40 Camion/Van)</option>
     <option value="Shampoing des sièges">Shampoing des sièges - 49,99$ (+25$ SUV/Camion/Van)</option>
   </select>
   <input type="date" name="Date" required aria-label="Date de réservation">
-  <p id="prix" aria-live="polite"></p>
+  <p id="prix" aria-live="prix"></p>
   <button type="submit">Réserver</button>
 </form>
   </section>
-<p class="important-notice"rouge-text>* Important : des frais applicables pour les services à l’extérieur de Sherbrooke</p>
+<p class="rouge-text"* Important : des frais applicables pour les services à l’extérieur de Sherbrooke</p>
   <section>
   <script>
     // Récupérer le paramètre 'service' depuis l'URL

@@ -206,8 +206,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shineautomobile - Galerie</title>
+  <title>Shineautomobile - Avant / Après</title>
   <style>
     body {
       margin: 0;
@@ -218,79 +217,76 @@
 
     h1 {
       color: #004080;
-      margin-top: 30px;
+      margin: 30px 0;
     }
 
     .slideshow-container {
-      max-width: 100%;
       position: relative;
-      margin: auto;
+      max-width: 100%;
+      height: 500px;
       overflow: hidden;
     }
 
     .slide {
-      display: none;
+      position: absolute;
       width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
     .slide img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
     }
 
-    /* Animation */
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-
-    @keyframes fade {
-      from { opacity: 0.4 }
-      to { opacity: 1 }
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
 
-  <h1>Bienvenue chez Shineautomobile</h1>
-  <div class="slideshow-container">
-    <div class="slide fade">
-      <img src="images/lavage1.jpeg" alt="Lavage extérieur">
-    </div>
-    <div class="slide fade">
-      <img src="images/lavage2.jpeg" alt="Nettoyage intérieur">
-    </div>
-    <div class="slide fade">
-      <img src="images/lavage3.jpeg" alt="Service à domicile">
-    </div>
-    <div class="slide fade">
-      <img src="images/lavage4.jpeg" alt="Résultat final brillant">
-    </div>
-      <img src="images/lavage5.jpeg" alt="Lavage extérieur">
-    </div>
-      <img src="images/lavage6.jpeg" alt="Lavage extérieur">
-    </div>
-      <img src="images/lavage7.jpeg" alt="Lavage extérieur">
-    </div>
-    <img src="images/lavage8.jpeg" alt="Lavage extérieur">
-    </div>
+  <h1>Résultats Avant / Après - Shineautomobile</h1>
+
+  <div class="slideshow-container" id="slideshow">
+    <!-- Paire 1 -->
+    <div class="slide active"><img src="images1.jpeg" alt="Avant 1"></div>
+    <div class="slide"><img src="images2.jpeg" alt="Après 1"></div>
+
+    <!-- Paire 2 -->
+    <div class="slide"><img src="images3.jpeg" alt="Avant 2"></div>
+    <div class="slide"><img src="images4.jpeg" alt="Après 2"></div>
+
+    <!-- Paire 3 -->
+    <div class="slide"><img src="images5.jpeg" alt="Avant 3"></div>
+    <div class="slide"><img src="images6.jpeg" alt="Après 3"></div>
+
+    <!-- Paire 4 -->
+    <div class="slide"><img src="image7.jpeg" alt="Avant 4"></div>
+    <div class="slide"><img src="images8.jpeg" alt="Après 4"></div>
   </div>
 
   <script>
-    let slideIndex = 0;
-    showSlides();
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
 
-    function showSlides() {
-      let slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000); // Change every 3 seconds
+    function showSlide() {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+      });
+
+      slides[index].classList.add('active');
+      index = (index + 1) % slides.length;
     }
+
+    setInterval(showSlide, 3000); // Toutes les 3 secondes
+  </script>
+
+</body>
+</html>
   </script>
 
 </body>

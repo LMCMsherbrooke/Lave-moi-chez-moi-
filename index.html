@@ -354,6 +354,67 @@
       </ul>
     </div>
   </section>
+<h2>Nos voitures lavées</h2>
+
+<div class="slideshow-container" id="voitures-slideshow">
+  <div class="slide-car active"><img src="voiture1.jpeg" alt="Voiture lavée 1"></div>
+  <div class="slide-car"><img src="voiture2.jpeg" alt="Voiture lavée 2"></div>
+  <div class="slide-car"><img src="voiture3.jpeg" alt="Voiture lavée 3"></div>
+  <div class="slide-car"><img src="voiture4.jpeg" alt="Voiture lavée 4"></div>
+  <div class="slide-car"><img src="voiture5.jpeg" alt="Voiture lavée 5"></div>
+  <div class="slide-car"><img src="voiture6.jpeg" alt="Voiture lavée 6"></div>
+  <div class="slide-car"><img src="voiture7.jpeg" alt="Voiture lavée 7"></div>
+</div>
+
+<style>
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 500px;
+    margin: 40px auto;
+    overflow: hidden;
+  }
+
+  .slide-car {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slide-car img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .slide-car.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  h2 {
+    text-align: center;
+    color: #004080;
+    font-size: 28px;
+    margin-top: 50px;
+  }
+</style>
+
+<script>
+  let slidesCar = document.querySelectorAll('.slide-car');
+  let indexCar = 0;
+
+  function showCarSlide() {
+    slidesCar.forEach(slide => slide.classList.remove('active'));
+    slidesCar[indexCar].classList.add('active');
+    indexCar = (indexCar + 1) % slidesCar.length;
+  }
+
+  setInterval(showCarSlide, 3000);
+</script>
 
   <section>
     <h2>Réservez dès maintenant !</h2>

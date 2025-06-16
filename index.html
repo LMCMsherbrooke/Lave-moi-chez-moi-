@@ -202,6 +202,100 @@
     <p>Profitez d’un lavage automobile professionnel, offert directement à votre domicile partout en Estrie. Service rapide, soigné et au meilleur rapport qualité-prix.</p>
     </section>
 <section>
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shineautomobile - Galerie</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f8fc;
+      text-align: center;
+    }
+
+    h1 {
+      color: #004080;
+      margin-top: 30px;
+    }
+
+    .slideshow-container {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4 }
+      to { opacity: 1 }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bienvenue chez Shineautomobile</h1>
+  <div class="slideshow-container">
+    <div class="slide fade">
+      <img src="images/lavage1.jpeg" alt="Lavage extérieur">
+    </div>
+    <div class="slide fade">
+      <img src="images/lavage2.jpeg" alt="Nettoyage intérieur">
+    </div>
+    <div class="slide fade">
+      <img src="images/lavage3.jpeg" alt="Service à domicile">
+    </div>
+    <div class="slide fade">
+      <img src="images/lavage4.jpeg" alt="Résultat final brillant">
+    </div>
+      <img src="images/lavage5.jpeg" alt="Lavage extérieur">
+    </div>
+      <img src="images/lavage6.jpeg" alt="Lavage extérieur">
+    </div>
+      <img src="images/lavage7.jpeg" alt="Lavage extérieur">
+    </div>
+    <img src="images/lavage8.jpeg" alt="Lavage extérieur">
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change every 3 seconds
+    }
+  </script>
+
+</body>
+</html>
+</section>
   <h2> Nos services </h2>
       </section>
     </script>
